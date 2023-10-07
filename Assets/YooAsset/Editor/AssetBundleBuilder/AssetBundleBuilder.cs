@@ -91,6 +91,7 @@ namespace YooAsset.Editor
 				{
 					new TaskPrepare(), //前期准备工作
 					new TaskGetBuildMap(), //获取构建列表
+					new TaskPreFilterEditorOnly(), //过滤EditorOnly并临时修改Asset
 					new TaskBuilding_SBP(), //开始执行构建
 					new TaskCopyRawFile(), //拷贝原生文件
 					new TaskVerifyBuildResult_SBP(), //验证构建结果
@@ -100,6 +101,7 @@ namespace YooAsset.Editor
 					new TaskCreateReport(), //创建报告文件
 					new TaskCreatePackage(), //制作补丁包
 					new TaskCopyBuildinFiles(), //拷贝内置文件
+					new TaskPostFilterEditorOnly(), //恢复被修改的EditorOnly
 				};
 				return pipeline;
 			}
